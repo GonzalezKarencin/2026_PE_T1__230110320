@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>TIPOS DE DATOS EN PROBABILIDAD Y ESTADISTÍCA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    background:#ffffff;
+    font-family:'Poppins', sans-serif;
+    padding:40px 20px;
+}
+
+/* ===== TÍTULO ===== */
+.titulo-pro{
+    text-align:center;
+    background:#eaf6ff;
+    color:#0f172a;
+    padding:18px 30px;
+    border-radius:16px;
+    font-size:2rem;
+    font-weight:700;
+    box-shadow:0 6px 18px rgba(56,189,248,0.18);
+    margin-bottom:40px;
+}
+
+/* ===== TABS ===== */
+.tabs{
+    max-width:900px;
+    margin:auto;
+}
+
+.tab-buttons{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.tab-btn{
+    background:#f1f5f9;
+    border:none;
+    padding:12px 22px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    transition:all 0.25s ease;
+}
+
+.tab-btn:hover{
+    background:#e0f2fe;
+}
+
+.tab-btn.active{
+    background:#38bdf8;
+    color:white;
+    box-shadow:0 4px 12px rgba(56,189,248,0.35);
+}
+
+/* ===== CONTENIDO ===== */
+.tab-content{
+    background:#ffffff;
+    border-radius:16px;
+    padding:30px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.08);
+    display:none;
+    animation:fadeIn 0.4s ease;
+}
+
+.tab-content.active{
+    display:block;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+h2{
+    margin-top:0;
+    color:#0369a1;
+}
+
+/* TARJETA DEL EJEMPLO */
+.card-ejemplo{
+    margin-top:12px;
+    background:#f8fbff;
+    border:2px solid #e0f2fe;
+    border-radius:12px;
+    padding:18px 20px;
+    box-shadow:0 4px 14px rgba(56,189,248,0.12);
+}
+/* ===== TARJETA ===== */
+.tabla-card{
+    margin-top:20px;
+    background:#ffffff;
+    border-radius:16px;
+    box-shadow:0 10px 28px rgba(0,0,0,0.08);
+    overflow:hidden;
+}
+
+/* ===== HEADER ===== */
+.tabla-header{
+    background:linear-gradient(135deg,#38bdf8,#0284c7);
+    color:white;
+    font-weight:700;
+    padding:14px 20px;
+    font-size:1rem;
+    letter-spacing:.5px;
+}
+
+/* ===== CONTENEDOR SCROLL ===== */
+.tabla-container{
+    overflow-x:auto;
+}
+    </div>
+</div>
+
+</style> 
+</head>
+
+<body>
+
+<h1 class="titulo-pro">
+    TIPOS DE DATOS EN PROBABILIDAD Y ESTADISTÍCA
+</h1>
+
+<div class="tabs">
+
+    <div class="tab-buttons">
+        <button class="tab-btn active" onclick="openTab(event,'discretos')">
+            Datos Cuantitativos Discretos
+        </button>
+
+        <button class="tab-btn" onclick="openTab(event,'continuos')">
+            Datos Cuantitativos Continuos
+        </button>
+
+        <button class="tab-btn" onclick="openTab(event,'cualitativos')">
+            Datos Cualitativos
+        </button>
+    </div>
+
+    <!-- TAB 1 -->
+    <div id="discretos" class="tab-content active">
+        <h2>Datos cuantitativos discretos</h2>
+
+        <h4>Concepto:</h4>
+        <p>Son datos numéricos que resultan de un conteo y solo pueden tomar valores enteros específicos.</p>
+
+        <h4>Características:</h4>
+        <ul>
+            <li>Son numéricos.</li>
+            <li>Son contables.</li>
+            <li>No admiten valores intermedios.</li>
+        </ul>
+
+        <h4>Ejemplo:</h4>
+
+        <!-- TARJETA 1-->
+        <div class="card-ejemplo">
+            <p>
+                Una universidad analiza el número de intentos que realizan 100 estudiantes para aprobar un examen en línea de certificación en redes durante un semestre.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- TAB 2 -->
+    <div id="continuos" class="tab-content">
+        <h2>Datos cuantitativos continuos</h2>
+
+        <h4>Concepto:</h4>
+        <p>Son datos numéricos que provienen de una medición y pueden tomar cualquier valor real dentro de un intervalo, incluyendo decimales infinitos.</p>
+
+        <h4>Características:</h4>
+        <ul>
+            <li>Se miden, no se cuentan</li>
+            <li>Requieren intervalos para organizarse.</li>
+            <li>Admiten decimales.</li>
+        </ul>
+               <h4>Ejemplo:</h4>
+
+        <!-- TARJETA 2-->
+        <div class="card-ejemplo">
+            <p>
+                Una empresa de desarrollo de software analiza el tiempo de respuesta de su servidor web (en segundos) durante 100 solicitudes consecutivas.
+            </p>
+        </div>
+    </div>
+    </div>
+
+    <!-- TAB 3 -->
+    <div id="cualitativos" class="tab-content">
+        <h2>Datos cualitativos</h2>
+
+        <h4>Concepto:</h4>
+        <p>Son datos que describen características o categorías, no cantidades numéricas.</p>
+
+        <h4>Características:</h4>
+        <ul>
+            <li>Representan categorías.</li>
+            <li>Se analizan mediante proporciones o porcentajes.</li>
+            <li>Representan cualidades.</li>
+        </ul>        
+               <h4>Ejemplo:</h4>
+
+        <!-- TARJETA 3-->
+        <div class="card-ejemplo">
+            <p>
+                Una empresa analiza el sistema operativo utilizado por sus 100 empleados en sus equipos de trabajo.
+            </p>
+        </div>
+    </div>
+    </div>
+
+</div>
+
+<script>
+function openTab(evt, tabName){
+
+    let contents = document.querySelectorAll(".tab-content");
+    contents.forEach(c => c.classList.remove("active"));
+
+    let buttons = document.querySelectorAll(".tab-btn");
+    buttons.forEach(b => b.classList.remove("active"));
+
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+}
+</script>
+
+</body>
+</html>
