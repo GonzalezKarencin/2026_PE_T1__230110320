@@ -94,39 +94,52 @@ h2{
     padding:18px 20px;
     box-shadow:0 4px 14px rgba(56,189,248,0.12);
 }
-/* ===== TARJETA ===== */
-.tabla-card{
-    margin-top:20px;
-    background:#ffffff;
-    border-radius:16px;
-    box-shadow:0 10px 28px rgba(0,0,0,0.08);
+
+/* ===== TABLA ===== */
+.tabla-dashboard{
+    width:70%;
+    margin:20px auto;
+    border-collapse:collapse;
+    background:white;
+    font-size:14px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    border-radius:10px;
     overflow:hidden;
 }
 
-/* ===== HEADER ===== */
-.tabla-header{
-    background:linear-gradient(135deg,#38bdf8,#0284c7);
+.tabla-dashboard thead{
+    background:#007bff;
     color:white;
-    font-weight:700;
-    padding:14px 20px;
-    font-size:1rem;
-    letter-spacing:.5px;
 }
 
-/* ===== CONTENEDOR SCROLL ===== */
-.tabla-container{
-    overflow-x:auto;
+.tabla-dashboard th,
+.tabla-dashboard td{
+    padding:10px 12px;
+    text-align:center;
+    border:1px solid #dcdcdc;
 }
-    </div>
-</div>
 
-</style> 
+.tabla-dashboard tbody tr{
+    transition:all 0.25s ease;
+}
+
+.tabla-dashboard tbody tr:hover{
+    background:#eaf3ff;
+    transform:scale(1.01);
+    cursor:pointer;
+}
+
+.total{
+    font-weight:bold;
+    background:#f1f1f1;
+}
+</style>
 </head>
 
 <body>
 
 <h1 class="titulo-pro">
-    TIPOS DE DATOS EN PROBABILIDAD Y ESTADISTÍCA
+TIPOS DE DATOS EN PROBABILIDAD Y ESTADISTÍCA
 </h1>
 
 <div class="tabs">
@@ -161,14 +174,29 @@ h2{
 
         <h4>Ejemplo:</h4>
 
-        <!-- TARJETA 1-->
         <div class="card-ejemplo">
             <p>
                 Una universidad analiza el número de intentos que realizan 100 estudiantes para aprobar un examen en línea de certificación en redes durante un semestre.
             </p>
 
+            <table class="tabla-dashboard">
+                <thead>
+                    <tr>
+                        <th>Clase (Intentos)</th>
+                        <th>Frecuencia Absoluta (fi)</th>
+                        <th>Frecuencia Relativa (%)</th>
+                        <th>Frecuencia Acumulada (Fi)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>40</td><td>40%</td><td>40</td></tr>
+                    <tr><td>2</td><td>35</td><td>35%</td><td>75</td></tr>
+                    <tr><td>3</td><td>17</td><td>17%</td><td>92</td></tr>
+                    <tr><td>4</td><td>8</td><td>8%</td><td>100</td></tr>
+                    <tr class="total"><td>Total</td><td>100</td><td>100%</td><td>100</td></tr>
+                </tbody>
+            </table>
         </div>
-
     </div>
 
     <!-- TAB 2 -->
@@ -176,7 +204,10 @@ h2{
         <h2>Datos cuantitativos continuos</h2>
 
         <h4>Concepto:</h4>
-        <p>Son datos numéricos que provienen de una medición y pueden tomar cualquier valor real dentro de un intervalo, incluyendo decimales infinitos.</p>
+        <p>
+            Son datos numéricos que provienen de una medición y pueden tomar
+            cualquier valor real dentro de un intervalo, incluyendo decimales infinitos.
+        </p>
 
         <h4>Características:</h4>
         <ul>
@@ -184,15 +215,46 @@ h2{
             <li>Requieren intervalos para organizarse.</li>
             <li>Admiten decimales.</li>
         </ul>
-               <h4>Ejemplo:</h4>
 
-        <!-- TARJETA 2-->
+        <h4>Ejemplo:</h4>
         <div class="card-ejemplo">
             <p>
-                Una empresa de desarrollo de software analiza el tiempo de respuesta de su servidor web (en segundos) durante 100 solicitudes consecutivas.
-            </p>
-        </div>
-    </div>
+                Una empresa de desarrollo de software analiza la distribución del tiempo de respuesta del servidor web (en segundos) durante 100 solicitudes consecutivas.
+            <p> 
+  
+    <table class="tabla-dashboard">
+        <thead>
+            <tr>
+                <th>Clase</th>
+                <th>Límite Inferior</th>
+                <th>Límite Superior</th>
+                <th>Marca de Clase (xi)</th>
+                <th>fi</th>
+                <th>fr (%)</th>
+                <th>Fi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>1.20</td><td>1.39</td><td>1.295</td><td>20</td><td>20%</td><td>20</td></tr>
+            <tr><td>2</td><td>1.40</td><td>1.59</td><td>1.495</td><td>20</td><td>20%</td><td>40</td></tr>
+            <tr><td>3</td><td>1.60</td><td>1.79</td><td>1.695</td><td>15</td><td>15%</td><td>55</td></tr>
+            <tr><td>4</td><td>1.80</td><td>1.99</td><td>1.895</td><td>17</td><td>17%</td><td>72</td></tr>
+            <tr><td>5</td><td>2.00</td><td>2.19</td><td>2.095</td><td>14</td><td>14%</td><td>86</td></tr>
+            <tr><td>6</td><td>2.20</td><td>2.39</td><td>2.295</td><td>6</td><td>6%</td><td>92</td></tr>
+            <tr><td>7</td><td>2.40</td><td>2.60</td><td>2.50</td><td>8</td><td>8%</td><td>100</td></tr>
+            <tr class="total">
+                <td>Total</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>100</td>
+                <td>100%</td>
+                <td>100</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
     </div>
 
     <!-- TAB 3 -->
@@ -207,23 +269,20 @@ h2{
             <li>Representan categorías.</li>
             <li>Se analizan mediante proporciones o porcentajes.</li>
             <li>Representan cualidades.</li>
-        </ul>        
-               <h4>Ejemplo:</h4>
+        </ul>
 
-        <!-- TARJETA 3-->
+        <h4>Ejemplo:</h4>
         <div class="card-ejemplo">
             <p>
                 Una empresa analiza el sistema operativo utilizado por sus 100 empleados en sus equipos de trabajo.
             </p>
         </div>
     </div>
-    </div>
 
 </div>
 
 <script>
 function openTab(evt, tabName){
-
     let contents = document.querySelectorAll(".tab-content");
     contents.forEach(c => c.classList.remove("active"));
 
